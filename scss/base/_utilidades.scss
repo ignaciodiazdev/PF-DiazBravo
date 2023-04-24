@@ -1,0 +1,28 @@
+.boton{
+    text-decoration : none;
+    padding         : 10px 25px;
+    border-radius   : 20px;
+}
+.tarjeta{
+    display         : flex;
+    flex-direction  : column;
+    padding         : 15px;
+    gap             : 15px;
+    min-height      : 100px;
+    background-color: $bg-dark-secondary;
+    border-radius   : 20px;
+}
+
+
+@mixin d-flex ( $direction:row, $justify: flex-start, $align:stretch){
+    display         : flex;
+    flex-direction  : $direction;
+    justify-content : $justify;
+    align-items     : $align;
+}
+
+@mixin grid ( $columnas, $gap:0px ){
+    display               : grid;
+    grid-template-columns : repeat($columnas, 1fr);
+    gap                   : $gap;
+}

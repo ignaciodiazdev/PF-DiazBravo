@@ -1,0 +1,34 @@
+.footer{
+    
+    background-color : #1d1d1f;
+    margin-top       : 30px;
+
+    &__contenido{
+
+        @include d-flex($direction: column, $align: center);
+        gap: 12px;
+        padding: 40px 0;
+
+        &__logo{
+            width   : 250px;
+            height  : 35px;
+        }   
+        &__parrafo{
+            color       : $bg-white-third;
+            margin      : 0;
+            text-align  : center;
+        }
+        &__redes i{
+
+            display    : inline-block;
+            margin     : 0 20px;
+            font-size  : 25px;
+            color      : $bg-white-third;
+            transition : all ease .50s;
+
+            &:hover{
+                color: $bg-orange-primary;
+            }
+        }
+    }
+}

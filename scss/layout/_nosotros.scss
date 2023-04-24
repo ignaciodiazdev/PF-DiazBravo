@@ -1,0 +1,150 @@
+.carrusel{
+    &__item{
+
+        height: 80vh;
+        
+        &__img{
+            height     : 100%;
+            object-fit : cover;
+            filter     : brightness(0.5);
+        }
+    }
+    &__info{
+        
+        @include d-flex($direction: column, $justify: center, $align:center);
+        padding : 0;
+        margin  : 0;
+        
+        &__first-line{
+            margin: 0 !important;
+        }
+        
+        &__second-line{
+            color: $bg-white-primary;
+            color: $bg-white-primary;
+        }
+    }
+}
+
+.historia{
+
+    @include d-flex($direction: column); 
+    @extend .tarjeta;
+    background      : rgb(109,49,39);
+    background      : linear-gradient(92deg, rgba(109,49,39,1) 0%, rgba(0,90,94,1) 94%, rgba(0,60,78,1) 100%);
+    margin-top      : 40px;
+    margin-bottom   : 40px;
+
+    &__info{
+
+        &__titulo{
+            text-align  : center;
+            span{
+                color: #5fb02f;
+            }
+        }
+        &__parrafo{
+            @extend .tarjeta;
+            background-color : $bg-dark-primary;
+            color            : $bg-white-third;
+        }
+    }
+    
+    &__imagen{        
+        @include d-flex($justify: center,$align:center);
+        img{
+            width   : 240px;
+            height  : 300px;
+        }
+    }
+}
+.horarios{
+    margin-bottom: 40px;
+    &__titulo{
+        text-align: center;
+        margin-bottom: 40px ;
+    }
+    &__lista{
+        @include d-flex($direction: column);
+        gap: 20px;
+        .card-horario{
+            
+            @extend .tarjeta;
+            align-items     : center;
+            justify-content : center;
+            gap             : 10px;
+            height          : 170px;
+            &__icono{
+                color: $bg-white-third;
+                font-size: 32px;
+            }
+            &__titulo{
+                color       : $bg-green-primary;
+                font-weight : bold;
+                margin      : 0;
+            }
+            &__parrafo{
+                font-size : 18px;
+                margin    : 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px){
+    
+    .historia{
+        position: relative;
+        @include d-flex($direction: row-reverse);
+
+        &__info{
+            flex-basis: 60%;
+            @include d-flex($direction: column, $justify: center);
+        }
+        
+        &__imagen{  
+            flex-basis: 40%;      
+            img{
+                position : absolute;
+                width    : 290px;
+                height   : 369px;
+                bottom   : 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+
+    .historia{
+        margin-top      : 80px;
+        margin-bottom   : 80px;
+
+        &__info{
+            flex-basis: 70%;
+        }
+        
+        &__imagen{  
+            flex-basis: 30%;      
+            img{
+                height : 330px;
+                width  : 272px;
+                bottom : 0px;
+            }
+        }
+    }
+    .horarios{
+        margin-bottom: 80px;
+        &__lista{
+            @include grid(3, 20px);
+        }
+    }
+}
+
+@media (min-width: 1200px){
+
+    .historia{
+        margin-top    : 160px;
+        margin-bottom : 100px;
+    }
+}

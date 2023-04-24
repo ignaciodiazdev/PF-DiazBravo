@@ -1,0 +1,154 @@
+.contacto{
+
+    @include d-flex($direction: column);
+    margin-top  : 20px;
+    gap         : 25px;
+    
+    &__img{
+    
+        @include d-flex($justify:center, $align:center);
+        img{
+            width: 70%;
+        }
+    
+    }
+    &__datos{
+
+        @extend .tarjeta;
+        @include d-flex($direction: column);
+        background-color : $bg-purple-primary;
+        height           : 550px;
+        padding          : 30px;
+
+        &__titulo{
+
+            text-align: center;
+        }
+    }
+    .formulario{
+
+        @include d-flex($direction: column);
+        row-gap: 20px;
+        
+        &__campo{
+
+            @include d-flex($direction: column);
+            gap: 5px;
+            
+            label{
+                
+                display : block;
+                color   : $bg-white-third;
+            
+            }
+            &__entrada{
+
+                width            : 100%;
+                padding          : 8px 10px;
+                border           : none;
+                background-color : $bg-purple-secondary;
+                border-radius    : 10px;
+                color            : $bg-white-third;
+                resize           : none;
+                
+                &:focus{
+
+                    outline    : none;
+                    box-shadow : 0 0 5px $bg-orange-primary;
+                }
+            }
+        }
+        &__boton{
+
+            @include d-flex($justify: center);
+            padding: 10px 0;
+            
+            &__enviar{      
+
+                @extend .boton; 
+                color            : $bg-white-primary;
+                font-weight      : bold;
+                background-color : $bg-green-secondary;
+                border           : none;
+                width            : 100%;
+
+                &:hover{
+                    background-color: $bg-green-third;
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .contacto{
+
+        height          : 90vh;
+        flex-direction  : row;
+        
+        &__img{
+
+            flex-basis: 50%;
+
+            img{
+                width     : 100%;
+                animation : float-img 2.5s ease-in-out infinite;
+            }
+
+            @keyframes float-img {
+
+                0%{
+                    transform: translateY(0);
+                }
+                50%{
+                    transform: translateY(-16px);
+                }
+                100%{
+                    transform: translateY(0);
+                }
+            }
+        }
+        &__datos{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        .formulario{
+            &__boton{
+                &__enviar{            
+                    width: 40%;
+                }
+    
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 992px){
+    .contacto{
+        &__img{
+            img{
+                width: 85%;
+            }
+        }
+    }
+}
+@media (min-width: 1200px){
+    .contacto{
+
+        justify-content: space-evenly;
+        
+        &__img{
+            flex-basis: 40%;         
+            img{
+                width: 80%;
+            }
+        }
+        &__datos{
+            flex-basis: 35%;
+        }
+    }
+}
