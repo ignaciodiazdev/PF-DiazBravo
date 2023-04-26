@@ -289,6 +289,7 @@ a {
   align-items: center;
   height: 300px;
   justify-content: center;
+  transition: all ease 1s;
 }
 .opiniones__lista .cliente__img {
   height: 120px;
@@ -307,6 +308,10 @@ a {
 .opiniones__lista .cliente__opinion {
   text-align: center;
   font-size: 14px;
+}
+.opiniones__lista .cliente:hover {
+  transform: scale(1.05);
+  background-color: #141830;
 }
 
 @media (min-width: 768px) {

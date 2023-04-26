@@ -104,6 +104,7 @@
             align-items     : center;
             height          : 300px;
             justify-content : center;
+            transition: all ease 1s;
             &__img{
 
                 height        : 120px;
@@ -122,6 +123,10 @@
             &__opinion{
                 text-align  : center;
                 font-size   : 14px;
+            }
+            &:hover{
+                transform       : scale(1.05);
+                background-color: #141830;
             }
         }
     }
