@@ -299,7 +299,7 @@ a {
   border: 3px solid #ec9614;
 }
 .opiniones__lista .cliente__nombre {
-  color: #eeeeee;
+  color: rgba(242, 248, 249, 0.8823529412);
   margin: 0;
 }
 .opiniones__lista .cliente__valoracion {
